@@ -1,6 +1,7 @@
 from calendar import timegm
 from datetime import datetime
 
+from django.apps import apps as django_apps
 from django.conf import settings
 from django.utils.functional import lazy
 from django.utils.timezone import is_naive, make_aware, utc
@@ -33,7 +34,7 @@ format_lazy = lazy(format_lazy, str)
 
 def get_user_model():
     """
-    Return the User model that is active in this project.
+    Return the User model that is active for SimpleJWT.
     """
     try:
         return django_apps.get_model(settings.SIMPLE_JWT_AUTH_USER_MODEL, require_ready=False)
