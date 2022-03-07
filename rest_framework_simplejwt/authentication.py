@@ -1,9 +1,9 @@
-from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from rest_framework import HTTP_HEADER_ENCODING, authentication
 
 from .exceptions import AuthenticationFailed, InvalidToken, TokenError
 from .settings import api_settings
+from .utils import get_user_model
 
 AUTH_HEADER_TYPES = api_settings.AUTH_HEADER_TYPES
 
