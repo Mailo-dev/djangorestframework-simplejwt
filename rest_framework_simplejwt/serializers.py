@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth import authenticate
 from django.contrib.auth.models import update_last_login
 from django.utils.translation import gettext_lazy as _
 from rest_framework import exceptions, serializers
@@ -7,6 +7,7 @@ from rest_framework.exceptions import ValidationError
 
 from .settings import api_settings
 from .tokens import RefreshToken, SlidingToken, UntypedToken
+from .utils import get_user_model
 
 if api_settings.BLACKLIST_AFTER_ROTATION:
     from .token_blacklist.models import BlacklistedToken
