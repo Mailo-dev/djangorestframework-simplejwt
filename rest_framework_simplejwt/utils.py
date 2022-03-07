@@ -9,7 +9,7 @@ from django.contrib.auth.signals import user_login_failed
 from django.utils.functional import lazy
 from django.utils.timezone import is_naive, make_aware, utc
 from django.views.decorators.debug import sensitive_variables
-
+from django.contrib.auth import load_backend
 
 def make_utc(dt):
     if settings.USE_TZ and is_naive(dt):
