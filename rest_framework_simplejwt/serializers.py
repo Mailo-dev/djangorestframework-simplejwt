@@ -7,7 +7,7 @@ from rest_framework.exceptions import ValidationError
 
 from .settings import api_settings
 from .tokens import RefreshToken, SlidingToken, UntypedToken
-from .utils import get_user_model
+from .utils import get_user_model, authenticate
 
 if api_settings.BLACKLIST_AFTER_ROTATION:
     from .token_blacklist.models import BlacklistedToken
