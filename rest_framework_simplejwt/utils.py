@@ -5,6 +5,7 @@ from datetime import datetime
 
 from django.apps import apps as django_apps
 from django.conf import settings
+from django.contrib.auth import _clean_credentials
 from django.contrib.auth.signals import user_login_failed
 from django.utils.functional import lazy
 from django.utils.timezone import is_naive, make_aware, utc
